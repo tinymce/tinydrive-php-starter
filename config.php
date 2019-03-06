@@ -4,12 +4,8 @@ $config = array();
 // Replace this with your api key from the "API Key Manager" at the tiny.cloud account page
 $config["apiKey"] = "your-api-key";
 
-// Replace woth your private key from the "JWT Key Manager" at the tiny.cloud account page
-$config['privateKey'] = <<<EOD
------BEGIN PRIVATE KEY-----
-...
------END PRIVATE KEY-----
-EOD;
+// Replace the contents of the private.key file with the one from the "JWT Key Manager" at the tiny.cloud account page
+$config['privateKeyFile'] = "./private.key";
 
 // This is the fake database that the login authenticates against
 $config["users"] = [

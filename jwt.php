@@ -31,7 +31,8 @@ if (isset($config["scopeUser"]) && $config["scopeUser"]) {
 }
 
 try {
-  $token = JWT::encode($payload, $config["privateKey"], 'RS256');
+  $privateKey = file_get_contents(__DIR__ . $config["privateKeyFile"]);
+  $token = JWT::encode($payload, $privateKey, 'RS256');
   http_response_code(200);
   header('Content-Type: application/json');
   echo json_encode(array("token" => $token));
