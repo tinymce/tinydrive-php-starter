@@ -2,7 +2,7 @@
 
 This project will help you get started with Tiny Drive and allow you to play around with it's features.
 
-## Prerequirements
+## Pre requirements
 
 PHP 7.0 on any supported platform.
 
@@ -18,13 +18,13 @@ $ git clone git@github.com:tinymce/tinydrive-php-starter.git
 
 ### 2. Change the `apiKey` in `config.php`
 
-You get the api key from the *`*API Key Manager` account manager at http://tiny.cloud.
+You get the api key from the `API Key Manager` account manager at http://tiny.cloud.
 
 ### 3. Replace the `private.key` file with your generated private RSA key 
 
 You get the private RSA key from the `JWT Key Manager` account manager at http://tiny.cloud.
 
-### 4. Go to the directory and start the php dev server
+### 4. Go to the directory and start the dev server
 
 ```
 $ cd tinydrive-php-starter
