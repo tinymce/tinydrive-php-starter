@@ -6,9 +6,9 @@ This project will help you get started with Tiny Drive and allow you to play aro
 
 PHP 7.0 on any supported platform.
 
-These are the steps needed to get this project running on your machine:
-
 ## Getting started steps
+
+These are the steps needed to get this project running on your machine:
 
 ### 1. Clone this repo to your local machine using
 
