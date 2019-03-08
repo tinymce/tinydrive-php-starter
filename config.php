@@ -9,8 +9,8 @@ $config['privateKeyFile'] = "./private.key";
 
 // This is the fake database that the login authenticates against
 $config["users"] = [
-  ["login" => "johndoe", "password" => "password", "name" => "John Doe"],
-  ["login" => "janedoe", "password" => "password", "name" => "Jane Doe"]
+  ["username" => "johndoe", "password" => "password", "fullname" => "John Doe"],
+  ["username" => "janedoe", "password" => "password", "fullname" => "Jane Doe"]
 ];
 
 // If this is enabled the root of Tiny Drive will be within a directory named as the user login

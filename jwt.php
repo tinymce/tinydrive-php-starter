@@ -16,10 +16,10 @@ if (!isset($_SESSION["user"])) {
 
 $payload = array(
   // Unique user id string
-  "sub" => $_SESSION["user"]["login"],
+  "sub" => $_SESSION["user"]["username"],
 
   // Full name of user
-  "name" => $_SESSION["user"]["name"],
+  "name" => $_SESSION["user"]["fullname"],
 
   // 10 minutes expiration
   "exp" => time() + 60 * 10
@@ -27,11 +27,11 @@ $payload = array(
 
 // Scopes the path to a specific user directory
 if (isset($config["scopeUser"]) && $config["scopeUser"]) {
-  $payload["https://claims.tiny.cloud/drive/root"] = "/" . $_SESSION["user"]["login"];
+  $payload["https://claims.tiny.cloud/drive/root"] = "/" . $_SESSION["user"]["username"];
 }
 
 try {
-  $privateKey = file_get_contents(__DIR__ . $config["privateKeyFile"]);
+  $privateKey = file_get_contents(__DIR__ . '/' . $config["privateKeyFile"]);
   $token = JWT::encode($payload, $privateKey, 'RS256');
   http_response_code(200);
   header('Content-Type: application/json');

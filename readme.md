@@ -4,7 +4,7 @@ This project will help you get started with Tiny Drive and allow you to play aro
 
 ## Pre requirements
 
-PHP 7.0 on any supported platform.
+PHP 7.0+ on any supported platform.
 
 ## Getting started steps
 
@@ -16,11 +16,11 @@ These are the steps needed to get this project running on your machine:
 $ git clone git@github.com:tinymce/tinydrive-php-starter.git
 ```
 
-### 2. Change the `apiKey` in `config.php`
+### 2. Change the `apiKey` in `tinydrive-php-starter/config.php`
 
 You get the api key from the `API Key Manager` account manager at http://tiny.cloud.
 
-### 3. Replace the `private.key` file with your generated private RSA key 
+### 3. Create a `tinydrive-php-starter/private.key` file containing your generated private RSA key
 
 You get the private RSA key from the `JWT Key Manager` account manager at http://tiny.cloud.
 

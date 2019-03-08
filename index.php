@@ -4,9 +4,9 @@
   session_start();
   $error = "";
 
-  if (isset($_POST["login"]) && isset($_POST["password"])) {
+  if (isset($_POST["username"]) && isset($_POST["password"])) {
     foreach ($config["users"] as $user) {
-      if ($user["login"] === $_POST["login"] && $user["password"] === $_POST["password"]) {
+      if ($user["username"] === $_POST["username"] && $user["password"] === $_POST["password"]) {
         $_SESSION["user"] = $user;
         header('location: /editor.php');
         die();
@@ -23,7 +23,7 @@
   <head>
     <meta charset="utf-8">
     <title>Login</title>
-    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="assets/css/app.css">
   </head>
 <body>
 <form method="post" action="/">
@@ -34,8 +34,8 @@
   <p>Login with the user/passwords available in the config.php file</p>
 
   <div>
-    <label for="login">User:</label>
-    <input type="text" id="login" name="login" value="johndoe">
+    <label for="username">User:</label>
+    <input type="text" id="username" name="username" value="johndoe">
   </div>
 
   <div>
@@ -43,7 +43,7 @@
     <input type="password" id="password" name="password" value="password">
   </div>
 
-  <input type="submit" value="Login">
+  <input type="submit" value="login">
 </form>
 </body>
 </html>
