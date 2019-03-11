@@ -8,7 +8,7 @@
     foreach ($config["users"] as $user) {
       if ($user["username"] === $_POST["username"] && $user["password"] === $_POST["password"]) {
         $_SESSION["user"] = $user;
-        header('location: /editor.php');
+        header('location: editor.php');
         die();
       }
     }
@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="assets/css/app.css">
   </head>
 <body>
-<form method="post" action="/">
+<form method="post" action="index.php">
   <?php if ($error !== "") { ?>
     <div><?php echo $error; ?></div>
   <?php } ?>
