@@ -25,7 +25,8 @@ $payload = array(
   "exp" => time() + 60 * 10
 );
 
-// Scopes the path to a specific user directory
+// When this is set the user will only be able to manage and see files in the specified root
+// directory. This makes it possible to have a dedicated home directory for each user.
 if (isset($config["scopeUser"]) && $config["scopeUser"]) {
   $payload["https://claims.tiny.cloud/drive/root"] = "/" . $_SESSION["user"]["username"];
 }
