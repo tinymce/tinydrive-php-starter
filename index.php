@@ -5,15 +5,20 @@
   $error = "";
 
   if (isset($_POST["username"]) && isset($_POST["password"])) {
+    $loggedInUser = null;
+
     foreach ($config["users"] as $user) {
       if ($user["username"] === $_POST["username"] && $user["password"] === $_POST["password"]) {
-        $_SESSION["user"] = $user;
-        header('location: editor.php');
-        die();
+        $loggedInUser = $user;
+        break;
       }
     }
 
-    if (!isset($_SESSION["user"])) {
+    if ($loggedInUser) {
+      $_SESSION["user"] = $loggedInUser;
+      header('location: editor.php');
+      die();
+    } else {
       $error = "Incorrect username or password.";
     }
   }
