@@ -20,7 +20,7 @@
 
 <body>
   <div class="container mt-3 mb-3">
-    <h1 class="h3 mb-4">Welcome <?php echo $user["fullname"]; ?> <a class="logout" href="logout.php">Logout</a></h1>
+    <h1 class="h3 mb-4">Welcome <?php echo $user["fullname"]; ?> <a class="btn btn-link" href="logout.php">Logout</a></h1>
     <p>TinyMCE editor instance setup with Tiny Drive integated into the link, image and media dialogs and with a separate direct insertfile button.</p>
     <textarea></textarea>
   </div>
