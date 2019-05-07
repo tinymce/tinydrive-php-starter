@@ -1,8 +1,8 @@
 # Tiny Drive PHP Starter Project
 
-This project will help you get started with Tiny Drive and allow you to play around with it's features.
+This project will help you get started with Tiny Drive and allow you to play around with its features.
 
-## Pre requirements
+## Prerequisites
 
 PHP 7.0+ on any supported platform.
 
@@ -18,7 +18,7 @@ $ git clone git@github.com:tinymce/tinydrive-php-starter.git
 
 ### 2. Change the `apiKey` in `tinydrive-php-starter/config.php`
 
-You get the api key from the `API Key Manager` account manager at http://tiny.cloud.
+You get the API key from the `API Key Manager` account manager at http://tiny.cloud.
 
 ### 3. Create a `tinydrive-php-starter/private.key` file containing your generated private RSA key
 
