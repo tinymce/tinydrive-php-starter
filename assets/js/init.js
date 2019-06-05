@@ -4,7 +4,7 @@ tinymce.init({
   toolbar: 'insertfile | undo redo | link image media | code',
   height: 600,
   // Tiny Drive specific options for more details on what these does check https://www.tiny.cloud/docs/plugins/drive/
-  tinydrive_token_provider: '/jwt.php',
+  tinydrive_token_provider: 'jwt.php',
   // tinydrive_upload_path: '/uploads',
   // tinydrive_max_image_dimension: 1024
 });
