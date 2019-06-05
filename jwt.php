@@ -3,6 +3,16 @@ require 'vendor/autoload.php';
 use \Firebase\JWT\JWT;
 require './config.php';
 
+function fatalError($message) {
+  http_response_code(500);
+  header('Content-Type: application/json');
+  die(json_encode(array("message" => "JWT auth failed: " . $message)));
+}
+
+if (!extension_loaded('openssl')) {
+  fatalError('You need to enable the openssl extension in your php.ini.');
+}
+
 session_start();
 
 header("Access-Control-Allow-Origin: *");
@@ -33,13 +43,12 @@ if (isset($config["scopeUser"]) && $config["scopeUser"]) {
 
 try {
   $privateKey = file_get_contents(__DIR__ . '/' . $config["privateKeyFile"]);
-  $token = JWT::encode($payload, $privateKey, 'RS256');
+  $token = @JWT::encode($payload, $privateKey, 'RS256');
   http_response_code(200);
   header('Content-Type: application/json');
   echo json_encode(array("token" => $token));
 } catch (Exception $e) {
-  http_response_code(500);
-  header('Content-Type: application/json');
-  echo $e->getMessage();
+  fatalError($e->getMessage());
 }
+
 ?>
